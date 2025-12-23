@@ -1,0 +1,14 @@
+u1w20251222/.vscode/settings.json
+u1w20251222/Library/*
+u1w20251222/Temp/*
+u1w20251222/Logs/*
+u1w20251222/Packages/*
+u1w20251222/UserSettings/*
+u1w20251222/Assembly-CSharp.csproj
+u1w20251222/Assembly-CSharp-firstpass.csproj
+u1w20251222/u1w20251222.sln
+u1w20251222/Assets/Plugins/*
+u1w20251222/ProjectSettings/*
+u1w20251222/Assets/Settings/*
+u1w20251222/Assets/Library/*
+.DS_Store
