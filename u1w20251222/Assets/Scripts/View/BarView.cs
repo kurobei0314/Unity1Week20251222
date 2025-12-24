@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class BarView : MonoBehaviour
 {
-    [SerializeField] private Image gaugeImage;
-    private float ratio;
+    [SerializeField] private Image m_gaugeImage;
+    private float m_ratio;
 
     public void Update()
     {
         UpdateGaugeRatio();
-        gaugeImage.fillAmount = ratio;
+        m_gaugeImage.fillAmount = m_ratio;
     }
 
     private void UpdateGaugeRatio()
     {
-        ratio = ratio == 1.0f ?  0.0f : Mathf.Clamp( ratio + Time.deltaTime, 0.0f, 1.0f);
+        m_ratio = m_ratio == 1.0f ?  0.0f : Mathf.Clamp( m_ratio + Time.deltaTime, 0.0f, 1.0f);
     }
     
 }

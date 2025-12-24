@@ -8,8 +8,14 @@ public class GameFlowManager : MonoBehaviour
         ResultAnimation,
         Result,
     }
+    private GameState m_State;
 
-    void Update()
+    private void Start()
+    {
+
+    }
+
+    private void Update()
     {
         
     }
