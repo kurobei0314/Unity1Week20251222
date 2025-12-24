@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class GameFlowManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private enum GameState
     {
-        
+        MainPlay,
+        ResultAnimation,
+        Result,
     }
 
-    // Update is called once per frame
     void Update()
     {
         
