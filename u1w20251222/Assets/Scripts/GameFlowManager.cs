@@ -9,6 +9,11 @@ public class GameFlowManager : MonoBehaviour
 
     private void Start()
     {
+        Initialize();
+    }
+
+    private void Initialize()
+    {
         m_Model = new GameStateModel();
         m_InputController.Initialize(InputClick);
     }
@@ -31,6 +36,9 @@ public class GameFlowManager : MonoBehaviour
             case GameStateModel.GameState.MainPlay:
                 PlayResultAnimation();
                 break;
+            case GameStateModel.GameState.Result:
+                Retry();
+                break;
         }
     }
 
@@ -39,7 +47,14 @@ public class GameFlowManager : MonoBehaviour
         m_Model.SetState(GameStateModel.GameState.ResultAnimation);
         m_ScreenView.PlayResultAnimation(() => 
         {
+            Debug.Log("Result Status");
             m_Model.SetState(GameStateModel.GameState.Result);
         });
+    }
+
+    private void Retry()
+    {
+        Debug.Log("wa------i");
+        Initialize();
     }
 }
