@@ -2,21 +2,13 @@ using UnityEngine;
 
 public class GameFlowManager : MonoBehaviour
 {
-    private enum GameState
-    {
-        MainPlay,
-        ResultAnimation,
-        Result,
-    }
-    private GameState m_State;
+    [SerializeField] private ScreenView m_ScreenView;
+    [SerializeField] private InputController m_InputController;
 
     private void Start()
     {
-
+        var model = new GameStateModel();
+        m_InputController.Initialize(m_ScreenView, model);
     }
 
-    private void Update()
-    {
-        
-    }
 }

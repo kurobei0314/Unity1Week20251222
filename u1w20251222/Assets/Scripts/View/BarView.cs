@@ -6,6 +6,11 @@ public class BarView : MonoBehaviour
     [SerializeField] private Image m_gaugeImage;
     private float m_ratio;
 
+    public void Initialize()
+    {
+        m_ratio = 0;
+    }
+
     public void Update()
     {
         UpdateGaugeRatio();
