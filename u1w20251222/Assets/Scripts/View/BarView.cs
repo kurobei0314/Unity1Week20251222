@@ -11,7 +11,7 @@ public class BarView : MonoBehaviour
         m_ratio = 0;
     }
 
-    public void Update()
+    public void UpdateView()
     {
         UpdateGaugeRatio();
         m_gaugeImage.fillAmount = m_ratio;

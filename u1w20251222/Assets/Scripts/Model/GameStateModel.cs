@@ -16,7 +16,8 @@ public class GameStateModel
     }
 
     public void SetState(GameState state)
-    {
-        m_State = state;
-    }
+        => m_State = state;
+    
+    public GameState GetState()
+        => m_State;
 }

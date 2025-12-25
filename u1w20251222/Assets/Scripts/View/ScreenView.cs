@@ -12,4 +12,9 @@ public class ScreenView : MonoBehaviour
         m_Character.Initialize();
         m_Snow.Initialize();
     }
+
+    public void UpdateView()
+    {
+        m_BarView.UpdateView();
+    }
 }
