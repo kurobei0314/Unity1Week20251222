@@ -10,14 +10,36 @@ public class GameFlowManager : MonoBehaviour
     private void Start()
     {
         m_Model = new GameStateModel();
-        m_InputController.Initialize(m_ScreenView, m_Model);
+        m_InputController.Initialize(InputClick);
     }
 
     private void Update()
     {
         if (m_Model.GetState() == GameStateModel.GameState.MainPlay)
         {
-            m_ScreenView.UpdateView();
+            m_Model.UpdateGaugeRatio();
+            m_ScreenView.UpdateView(m_Model.GetBarRatio());
         }
+    }
+
+    private void InputClick()
+    {
+        if ( m_Model == null ) return;
+
+        switch (m_Model.GetState())
+        {
+            case GameStateModel.GameState.MainPlay:
+                PlayResultAnimation();
+                break;
+        }
+    }
+
+    private void PlayResultAnimation()
+    {
+        m_Model.SetState(GameStateModel.GameState.ResultAnimation);
+        m_ScreenView.PlayResultAnimation(() => 
+        {
+            m_Model.SetState(GameStateModel.GameState.Result);
+        });
     }
 }

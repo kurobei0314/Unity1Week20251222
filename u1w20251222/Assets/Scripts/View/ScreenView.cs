@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class ScreenView : MonoBehaviour
 {
@@ -13,8 +14,13 @@ public class ScreenView : MonoBehaviour
         m_Snow.Initialize();
     }
 
-    public void UpdateView()
+    public void UpdateView(float ratio)
     {
-        m_BarView.UpdateView();
+        m_BarView.UpdateView(ratio);
+    }
+
+    public void PlayResultAnimation(Action finishCallback)
+    {
+        finishCallback?.Invoke();
     }
 }

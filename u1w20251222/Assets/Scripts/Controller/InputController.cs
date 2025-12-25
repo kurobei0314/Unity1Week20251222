@@ -1,20 +1,18 @@
 using UnityEngine;
+using System;
 
 public class InputController : MonoBehaviour
 {
-    private ScreenView m_ScreenView;
-    private GameStateModel m_GameStateModel;
-
-    public void Initialize(ScreenView view, GameStateModel model)
+    private Action m_OnClick;
+    public void Initialize(Action onClick)
     {
-        m_ScreenView = view;
-        m_GameStateModel = model;
+        m_OnClick = onClick;
     }
 
     #region ClickHandler
     public void InputClickArea()
     {
-        Debug.Log("wa----i");
+        m_OnClick.Invoke();
     }
     #endregion
 }
