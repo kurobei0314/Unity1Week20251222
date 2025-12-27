@@ -6,6 +6,7 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField] private InputController m_InputController;
 
     private GameStateModel m_Model;
+    private ResourceManager m_ResourceManager;
 
     private void Start()
     {
@@ -16,6 +17,8 @@ public class GameFlowManager : MonoBehaviour
     {
         m_Model = new GameStateModel();
         m_InputController.Initialize(InputClick);
+        m_ResourceManager = new ResourceManager();
+        
     }
 
     private void Update()
