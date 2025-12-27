@@ -47,12 +47,17 @@ public class GameFlowManager : MonoBehaviour
 
     private void PlayResultAnimation()
     {
+        m_Model.JugdeResult();
         m_Model.SetState(GameStateModel.GameState.ResultAnimation);
-        m_ScreenView.PlayResultAnimation(() => 
+
+        switch(m_Model.GetResult())
         {
-            Debug.Log("Result Status");
-            m_Model.SetState(GameStateModel.GameState.Result);
-        });
+            case GameStateModel.GameResult.UnderCharge:
+                m_ScreenView.PlayUnderChargeResultAnimation(() => m_Model.SetState(GameStateModel.GameState.Result));
+                break;
+            default:
+                break;
+        }
     }
 
     private void Retry()

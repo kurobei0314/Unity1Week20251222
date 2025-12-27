@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using Cysharp.Threading.Tasks;
 
 public class ScreenView : MonoBehaviour
 {
@@ -19,8 +20,23 @@ public class ScreenView : MonoBehaviour
         m_BarView.UpdateView(ratio);
     }
 
-    public void PlayResultAnimation(Action finishCallback)
+    private async UniTask PlayAnimation(Action finishCallback)
     {
+        var token = this.GetCancellationTokenOnDestroy();
+        m_Character.WindUp();
+        await UniTask.Delay(TimeSpan.FromSeconds(1.0f), cancellationToken: token);
+        m_Character.Punch();
+        token = this.GetCancellationTokenOnDestroy();
+        await UniTask.Delay(TimeSpan.FromSeconds(1.0f), cancellationToken: token);
         finishCallback?.Invoke();
+    }
+
+    public async UniTask PlayUnderChargeResultAnimation(Action finishCallback)
+    {
+        PlayAnimation(() => 
+        {
+            m_Snow.SetUnderChargeState();
+            finishCallback?.Invoke();
+        });
     }
 }
