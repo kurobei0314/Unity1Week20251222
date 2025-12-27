@@ -20,12 +20,14 @@ public class GameStateModel
     private GameState m_State;
     private GameResult m_Result;
     private float m_BarRatio;
+    private JustRatioRange m_JustRatioRange;
 
-    public GameStateModel()
+    public GameStateModel(JustRatioRange justRatioRange)
     {
         SetState(GameState.MainPlay);
         SetResult(GameResult.None);
         m_BarRatio = 0;
+        m_JustRatioRange = justRatioRange;
     }
 
     public void SetState(GameState state)
@@ -36,8 +38,9 @@ public class GameStateModel
     
     public void JugdeResult()
     {
-        // TODO: あとで結果を求められるようにする
-        SetResult(GameResult.UnderCharge);
+        if      (m_BarRatio < m_JustRatioRange.startJustRatio) SetResult(GameResult.UnderCharge);
+        else if (m_JustRatioRange.endJustRatio < m_BarRatio)   SetResult(GameResult.OverCharge);
+        else                                                   SetResult(GameResult.UnderCharge);
     }
 
 

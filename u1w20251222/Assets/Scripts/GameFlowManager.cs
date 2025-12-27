@@ -1,9 +1,23 @@
 using UnityEngine;
+using System;
+
+[Serializable]
+public class JustRatioRange
+{
+    // ちょうどいい力加減の最初の範囲 //
+    public float startJustRatio;
+
+    // ちょうどいい力加減の最後の範囲 //
+    public float endJustRatio;
+}
+
 
 public class GameFlowManager : MonoBehaviour
 {
     [SerializeField] private ScreenView m_ScreenView;
     [SerializeField] private InputController m_InputController;
+
+    [SerializeField] private JustRatioRange m_JustRatioRange;
 
     private GameStateModel m_Model;
     private IResourceManager m_ResourceManager;
@@ -15,7 +29,7 @@ public class GameFlowManager : MonoBehaviour
 
     private void Initialize()
     {
-        m_Model = new GameStateModel();
+        m_Model = new GameStateModel(m_JustRatioRange);
         m_InputController.Initialize(InputClick);
         m_ResourceManager = (IResourceManager)new ResourceManager();
         m_ScreenView.Initialize();

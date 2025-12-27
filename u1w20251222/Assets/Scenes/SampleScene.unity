@@ -1321,6 +1321,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameFlowManager
   m_ScreenView: {fileID: 181601322}
   m_InputController: {fileID: 440798795}
+  m_JustRatioRange:
+    startJustRatio: 0.4
+    endJustRatio: 0.7
 --- !u!4 &1168752659
 Transform:
   m_ObjectHideFlags: 0
