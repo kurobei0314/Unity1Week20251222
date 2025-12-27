@@ -15,33 +15,8 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 763391e80f8aa449b8ba925c7cf6b9b8
   m_SerializeEntries:
-  - m_GUID: 00bf0360e221e483c882b6c3fa878a48
-    m_Address: Assets/AddressableAssets/Player1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 022ff531be38848bf97617aa75af878b
-    m_Address: Assets/AddressableAssets/Bg
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 09c374607faa34591b9bfb05b0735c29
-    m_Address: Assets/AddressableAssets/Player3
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3467972eed26045458498879b7e27a1e
-    m_Address: Assets/AddressableAssets/Kamakura
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 37889105889d44d99bc91b423867f073
-    m_Address: Assets/AddressableAssets/Bar
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 689e0be19a8944dd5b948a5abcdc16b4
-    m_Address: Assets/AddressableAssets/Player2
+  - m_GUID: a2ab56839e1c9504ea9d141e95d0b16b
+    m_Address: Hit
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

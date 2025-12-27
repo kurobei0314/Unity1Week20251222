@@ -7,12 +7,14 @@ public class ScreenView : MonoBehaviour
     [SerializeField] private BarView m_BarView;
     [SerializeField] private CharacterView m_Character;
     [SerializeField] private SnowView m_Snow;
+    private IResourceManager m_ResourceManager;
 
-    public void Initialize()
+    public void Initialize(IResourceManager resourceManager)
     {
         m_BarView.Initialize();
         m_Character.Initialize();
         m_Snow.Initialize();
+        m_ResourceManager = resourceManager;
     }
 
     public void UpdateView(float ratio)
