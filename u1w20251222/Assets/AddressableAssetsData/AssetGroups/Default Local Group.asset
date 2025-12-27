@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Default Local Group
+  m_GUID: 763391e80f8aa449b8ba925c7cf6b9b8
+  m_SerializeEntries:
+  - m_GUID: 00bf0360e221e483c882b6c3fa878a48
+    m_Address: Assets/AddressableAssets/Player1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 022ff531be38848bf97617aa75af878b
+    m_Address: Assets/AddressableAssets/Bg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09c374607faa34591b9bfb05b0735c29
+    m_Address: Assets/AddressableAssets/Player3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3467972eed26045458498879b7e27a1e
+    m_Address: Assets/AddressableAssets/Kamakura
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 37889105889d44d99bc91b423867f073
+    m_Address: Assets/AddressableAssets/Bar
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 689e0be19a8944dd5b948a5abcdc16b4
+    m_Address: Assets/AddressableAssets/Player2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 80bca1a3ce1e34fd0997ab43c455392f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 64ed1632e20a643a3a8b0b9b1402031d, type: 2}
+    - {fileID: 11400000, guid: 7f289d540c7e34f9dae764a2d1b38fd3, type: 2}
