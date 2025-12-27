@@ -11,7 +11,7 @@ public class SnowView : MonoBehaviour
     public void Initialize()
     {
         m_snowRenderers[0].gameObject.SetActive(true);
-        for (var i = 0; i < m_snowRenderers.Length; i++)
+        for (var i = 1; i < m_snowRenderers.Length; i++)
         {
             m_snowRenderers[i].gameObject.SetActive(false);
         }
@@ -20,17 +20,21 @@ public class SnowView : MonoBehaviour
     public void SetUnderChargeState()
     {
         m_snowRenderers[0].gameObject.SetActive(true);
-        // m_snowRenderers[1].gameObject.SetActive(false);
-        // m_snowRenderers[2].gameObject.SetActive(false);
+        m_snowRenderers[1].gameObject.SetActive(false);
+        m_snowRenderers[2].gameObject.SetActive(false);
     }
 
     public void SetJustState()
     {
-
+        m_snowRenderers[0].gameObject.SetActive(false);
+        m_snowRenderers[1].gameObject.SetActive(true);
+        m_snowRenderers[2].gameObject.SetActive(false);
     }
 
     public void SetOverChargeState()
     {
-
+        m_snowRenderers[0].gameObject.SetActive(false);
+        m_snowRenderers[1].gameObject.SetActive(false);
+        m_snowRenderers[2].gameObject.SetActive(true);
     }
 }

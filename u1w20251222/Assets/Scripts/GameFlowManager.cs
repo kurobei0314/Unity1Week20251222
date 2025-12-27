@@ -18,7 +18,7 @@ public class GameFlowManager : MonoBehaviour
         m_Model = new GameStateModel();
         m_InputController.Initialize(InputClick);
         m_ResourceManager = (IResourceManager)new ResourceManager();
-
+        m_ScreenView.Initialize();
     }
 
     private void Update()
@@ -54,6 +54,12 @@ public class GameFlowManager : MonoBehaviour
         {
             case GameStateModel.GameResult.UnderCharge:
                 m_ScreenView.PlayUnderChargeResultAnimation(() => m_Model.SetState(GameStateModel.GameState.Result));
+                break;
+            case GameStateModel.GameResult.Just:
+                m_ScreenView.PlayJustResultAnimation(() => m_Model.SetState(GameStateModel.GameState.Result));
+                break;
+            case GameStateModel.GameResult.OverCharge:
+                m_ScreenView.PlayOverChargeResultAnimation(() => m_Model.SetState(GameStateModel.GameState.Result));
                 break;
             default:
                 break;

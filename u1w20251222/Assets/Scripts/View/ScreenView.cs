@@ -39,4 +39,22 @@ public class ScreenView : MonoBehaviour
             finishCallback?.Invoke();
         });
     }
+
+    public async UniTask PlayJustResultAnimation(Action finishCallback)
+    {
+        PlayAnimation(() => 
+        {
+            m_Snow.SetJustState();
+            finishCallback?.Invoke();
+        });
+    }
+
+    public async UniTask PlayOverChargeResultAnimation(Action finishCallback)
+    {
+        PlayAnimation(() => 
+        {
+            m_Snow.SetOverChargeState();
+            finishCallback?.Invoke();
+        });
+    }
 }
