@@ -40,7 +40,7 @@ public class GameStateModel
     {
         if      (m_BarRatio < m_JustRatioRange.startJustRatio) SetResult(GameResult.UnderCharge);
         else if (m_JustRatioRange.endJustRatio < m_BarRatio)   SetResult(GameResult.OverCharge);
-        else                                                   SetResult(GameResult.UnderCharge);
+        else                                                   SetResult(GameResult.Just);
     }
 
 
