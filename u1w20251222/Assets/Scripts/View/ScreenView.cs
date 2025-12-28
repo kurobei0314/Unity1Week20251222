@@ -27,8 +27,15 @@ public class ScreenView : MonoBehaviour
         var token = this.GetCancellationTokenOnDestroy();
         m_Character.WindUp();
         await UniTask.Delay(TimeSpan.FromSeconds(1.0f), cancellationToken: token);
-        m_Character.Punch();
-        token = this.GetCancellationTokenOnDestroy();
+        var load = false;
+        m_ResourceManager.LoadAsync<GameObject>( "Hit", (obj) =>
+        {
+            var go = Instantiate (obj) as GameObject;
+            m_Snow.SetEffectParent(go);
+            m_Character.Punch();
+            load = true;
+        } );
+        await UniTask.WaitUntil(() => load, cancellationToken: token); 
         await UniTask.Delay(TimeSpan.FromSeconds(1.0f), cancellationToken: token);
         finishCallback?.Invoke();
     }

@@ -14,7 +14,10 @@ public class ResourceManager : IResourceManager
 {
     public void LoadAsync<T>(string path, Action<T> finishCallback)
     {
-        Load<T>(path, finishCallback).Forget();
+        Load<T>(path, (obj) => 
+        {
+            finishCallback(obj);
+        }).Forget();
     }
 
     public async UniTask Load<T> (string path, Action<T> finishCallback)

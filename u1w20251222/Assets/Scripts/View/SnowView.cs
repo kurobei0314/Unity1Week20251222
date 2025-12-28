@@ -7,6 +7,7 @@ public class SnowView : MonoBehaviour
     // 1: ちょうどいい状態
     // 2: 穴が空きすぎた状態
     [SerializeField] private Transform[] m_snowRenderers;
+    [SerializeField] private Transform m_hitEffectParent;
 
     public void Initialize()
     {
@@ -36,5 +37,12 @@ public class SnowView : MonoBehaviour
         m_snowRenderers[0].gameObject.SetActive(false);
         m_snowRenderers[1].gameObject.SetActive(false);
         m_snowRenderers[2].gameObject.SetActive(true);
+    }
+
+    public void SetEffectParent(GameObject effect)
+    {
+        effect.transform.SetParent(m_hitEffectParent);
+        effect.transform.localPosition = Vector3.zero;
+        effect.transform.localScale = Vector3.one * 10;
     }
 }
