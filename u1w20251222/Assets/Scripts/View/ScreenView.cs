@@ -13,8 +13,8 @@ public class ScreenView : MonoBehaviour
 
     public void Initialize(IResourceManager resourceManager, Action finishAnimAction)
     {
-        InitializeView();
         m_ResourceManager = resourceManager;
+        InitializeView();
         m_StartUIView.PlayStartAnimation(finishAnimAction);
     }
 
@@ -24,6 +24,7 @@ public class ScreenView : MonoBehaviour
         m_Character.Initialize();
         m_Snow.Initialize();
         m_ResultUIView.Initialize();
+        m_StartUIView.Initialize(m_ResourceManager);
     }
 
     public void Retry()

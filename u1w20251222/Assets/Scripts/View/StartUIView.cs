@@ -5,10 +5,11 @@ public class StartUIView : MonoBehaviour
 {
     [SerializeField] private Animator m_Animator;
     private Action finishAnimAction;
+    private IResourceManager m_ResourceManager;
 
-    public void Initialize()
+    public void Initialize(IResourceManager resourceManager)
     {
-
+        m_ResourceManager = resourceManager;
     }
 
     public void PlayStartAnimation(Action finishAction)
@@ -21,5 +22,13 @@ public class StartUIView : MonoBehaviour
     {
         finishAnimAction?.Invoke();
         finishAnimAction = null;
+    }
+
+    public void PlaySEInAnimation()
+    {
+        m_ResourceManager.LoadAsync<AudioClip>("GuideSE", (audioClip) =>
+        {
+            AudioManager.Instance.PlaySE(audioClip);
+        });
     }
 }
