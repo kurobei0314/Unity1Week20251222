@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3467972eed26045458498879b7e27a1e
+guid: 6a757a581cc9144ffac5946c960f9bdb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5298078349671167343
-    second: Kamakura_0
+      213: 809629060751695275
+    second: Kamakura2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Kamakura_0
+      name: Kamakura2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1440
-        height: 674
+        height: 872
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f657658403e868940800000000000000
-      internalID: 5298078349671167343
+      spriteID: bad10f557516c3b00800000000000000
+      internalID: 809629060751695275
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Kamakura_0: 5298078349671167343
+      Kamakura2_0: 809629060751695275
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
