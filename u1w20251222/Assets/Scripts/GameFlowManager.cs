@@ -61,10 +61,18 @@ public class GameFlowManager : MonoBehaviour
         switch (m_Model.GetState())
         {
             case GameStateModel.GameState.MainPlay:
-                PlayResultAnimation();
+                m_ResourceManager.LoadAsync<AudioClip>("ClickSE", (audioClip) =>
+                {
+                    AudioManager.Instance.PlaySE(audioClip);
+                    PlayResultAnimation();
+                });
                 break;
             case GameStateModel.GameState.Result:
-                InputRetry();
+                m_ResourceManager.LoadAsync<AudioClip>("ClickSE", (audioClip) =>
+                {
+                    AudioManager.Instance.PlaySE(audioClip);
+                    InputRetry();
+                });
                 break;
         }
     }

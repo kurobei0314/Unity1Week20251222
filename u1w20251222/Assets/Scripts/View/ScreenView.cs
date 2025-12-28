@@ -38,7 +38,7 @@ public class ScreenView : MonoBehaviour
         m_BarView.UpdateView(ratio);
     }
 
-    private async UniTask PlayAnimation(Action playSnowAnimation, Action finishCallback)
+    private async UniTask PlayAnimation(string seName, Action playSnowAnimation, Action finishCallback)
     {
         var token = this.GetCancellationTokenOnDestroy();
         m_Character.WindUp();
@@ -48,6 +48,7 @@ public class ScreenView : MonoBehaviour
         {
             var go = Instantiate (obj) as GameObject;
             m_Snow.SetEffectParent(go);
+            m_ResourceManager.LoadAsync<AudioClip>(seName, (audioClip) => AudioManager.Instance.PlaySE(audioClip));
             m_Character.Punch();
             load = true;
         } );
@@ -60,30 +61,28 @@ public class ScreenView : MonoBehaviour
 
     public async UniTask PlayUnderChargeResultAnimation(Action finishCallback)
     {
-        PlayAnimation(
-            () => {
+        PlayAnimation("UnderChargeSE", () => {
                 m_Snow.SetUnderChargeState();
             },() => {
-            m_ResultUIView.PlayUnderChargeAnimation(finishCallback);
+                m_ResultUIView.PlayUnderChargeAnimation(finishCallback);
         });
     }
 
     public async UniTask PlayJustResultAnimation(Action finishCallback)
     {
-        PlayAnimation(() => {
-            m_Snow.SetJustState();
-        }, () => {
-            m_Snow.SetJustState();
-            m_ResultUIView.PlayJustAnimation(finishCallback);
+        PlayAnimation("JustSE", () => {
+                m_Snow.SetJustState();
+            }, () => {
+                m_ResultUIView.PlayJustAnimation(finishCallback);
         });
     }
 
     public async UniTask PlayOverChargeResultAnimation(Action finishCallback)
     {
-        PlayAnimation(() => {
-            m_Snow.SetOverChargeState();
-        },() =>  {
-            m_ResultUIView.PlayOverChargeAnimation(finishCallback);
+        PlayAnimation("OverChargeSE", () => {
+                m_Snow.SetOverChargeState();
+            },() =>  {
+                m_ResultUIView.PlayOverChargeAnimation(finishCallback);
         });
     }
 }

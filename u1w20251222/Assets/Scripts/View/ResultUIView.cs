@@ -15,7 +15,7 @@ public class ResultUIView : MonoBehaviour
 
     public void PlayUnderChargeAnimation(Action finishAction)
     {
-        m_ResultText.text = "かまくら無傷だった";
+        m_ResultText.text = "穴あかなかった";
         PlayResultUIAnimation();
         finishAnimAction = finishAction;
     }
