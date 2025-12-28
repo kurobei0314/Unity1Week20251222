@@ -273,7 +273,7 @@ MonoBehaviour:
   m_BarView: {fileID: 1560541603}
   m_Character: {fileID: 894846491}
   m_Snow: {fileID: 1576684323}
-  m_ResultUIView: {fileID: 0}
+  m_ResultUIView: {fileID: 2088602428}
 --- !u!4 &181601323
 Transform:
   m_ObjectHideFlags: 0

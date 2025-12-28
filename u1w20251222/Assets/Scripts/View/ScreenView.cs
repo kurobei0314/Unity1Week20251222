@@ -35,7 +35,7 @@ public class ScreenView : MonoBehaviour
         m_BarView.UpdateView(ratio);
     }
 
-    private async UniTask PlayAnimation(Action finishCallback)
+    private async UniTask PlayAnimation(Action playSnowAnimation, Action finishCallback)
     {
         var token = this.GetCancellationTokenOnDestroy();
         m_Character.WindUp();
@@ -50,33 +50,37 @@ public class ScreenView : MonoBehaviour
         } );
         await UniTask.WaitUntil(() => load, cancellationToken: token); 
         await UniTask.Delay(TimeSpan.FromSeconds(1.0f), cancellationToken: token);
+        playSnowAnimation?.Invoke();
+        await UniTask.Delay(TimeSpan.FromSeconds(1.0f), cancellationToken: token);
         finishCallback?.Invoke();
     }
 
     public async UniTask PlayUnderChargeResultAnimation(Action finishCallback)
     {
-        PlayAnimation(() => 
-        {
-            m_Snow.SetUnderChargeState();
-            finishCallback?.Invoke();
+        PlayAnimation(
+            () => {
+                m_Snow.SetUnderChargeState();
+            },() => {
+            m_ResultUIView.PlayUnderChargeAnimation(finishCallback);
         });
     }
 
     public async UniTask PlayJustResultAnimation(Action finishCallback)
     {
-        PlayAnimation(() => 
-        {
+        PlayAnimation(() => {
             m_Snow.SetJustState();
-            finishCallback?.Invoke();
+        }, () => {
+            m_Snow.SetJustState();
+            m_ResultUIView.PlayJustAnimation(finishCallback);
         });
     }
 
     public async UniTask PlayOverChargeResultAnimation(Action finishCallback)
     {
-        PlayAnimation(() => 
-        {
+        PlayAnimation(() => {
             m_Snow.SetOverChargeState();
-            finishCallback?.Invoke();
+        },() =>  {
+            m_ResultUIView.PlayOverChargeAnimation(finishCallback);
         });
     }
 }
