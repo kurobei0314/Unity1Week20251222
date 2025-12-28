@@ -7,13 +7,15 @@ public class ScreenView : MonoBehaviour
     [SerializeField] private BarView m_BarView;
     [SerializeField] private CharacterView m_Character;
     [SerializeField] private SnowView m_Snow;
+    [SerializeField] private StartUIView m_StartUIView;
     [SerializeField] private ResultUIView m_ResultUIView;
     private IResourceManager m_ResourceManager;
 
-    public void Initialize(IResourceManager resourceManager)
+    public void Initialize(IResourceManager resourceManager, Action finishAnimAction)
     {
         InitializeView();
         m_ResourceManager = resourceManager;
+        m_StartUIView.PlayStartAnimation(finishAnimAction);
     }
 
     private void InitializeView()

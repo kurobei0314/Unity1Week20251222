@@ -4,6 +4,7 @@ public class GameStateModel
 {
     public enum GameState
     {
+        StartAnimation,
         MainPlay,
         ResultAnimation,
         Result,
@@ -24,7 +25,7 @@ public class GameStateModel
 
     public GameStateModel(JustRatioRange justRatioRange)
     {
-        SetState(GameState.MainPlay);
+        SetState(GameState.StartAnimation);
         SetResult(GameResult.None);
         m_BarRatio = 0;
         m_JustRatioRange = justRatioRange;

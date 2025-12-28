@@ -32,12 +32,12 @@ public class GameFlowManager : MonoBehaviour
         m_Model = new GameStateModel(m_JustRatioRange);
         m_InputController.Initialize(InputClick);
         m_ResourceManager = (IResourceManager)new ResourceManager();
-        m_ScreenView.Initialize(m_ResourceManager);
+        m_ScreenView.Initialize(m_ResourceManager, () => m_Model.SetState(GameStateModel.GameState.MainPlay));
     }
 
     private void RetryGame()
     {
-        m_Model = new GameStateModel(m_JustRatioRange);
+        m_Model.SetState(GameStateModel.GameState.MainPlay);
         m_ScreenView.Retry();
     }
 
