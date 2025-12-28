@@ -35,6 +35,12 @@ public class GameFlowManager : MonoBehaviour
         m_ScreenView.Initialize(m_ResourceManager);
     }
 
+    private void RetryGame()
+    {
+        m_Model = new GameStateModel(m_JustRatioRange);
+        m_ScreenView.Retry();
+    }
+
     private void Update()
     {
         if (m_Model.GetState() == GameStateModel.GameState.MainPlay)
@@ -54,7 +60,7 @@ public class GameFlowManager : MonoBehaviour
                 PlayResultAnimation();
                 break;
             case GameStateModel.GameState.Result:
-                Retry();
+                InputRetry();
                 break;
         }
     }
@@ -80,9 +86,8 @@ public class GameFlowManager : MonoBehaviour
         }
     }
 
-    private void Retry()
+    private void InputRetry()
     {
-        Debug.Log("wa------i");
-        Initialize();
+        RetryGame();
     }
 }

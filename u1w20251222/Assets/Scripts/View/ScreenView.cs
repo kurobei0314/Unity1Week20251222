@@ -7,14 +7,27 @@ public class ScreenView : MonoBehaviour
     [SerializeField] private BarView m_BarView;
     [SerializeField] private CharacterView m_Character;
     [SerializeField] private SnowView m_Snow;
+    [SerializeField] private ResultUIView m_ResultUIView;
     private IResourceManager m_ResourceManager;
 
     public void Initialize(IResourceManager resourceManager)
     {
+        InitializeView();
+        m_ResourceManager = resourceManager;
+    }
+
+    private void InitializeView()
+    {
         m_BarView.Initialize();
         m_Character.Initialize();
         m_Snow.Initialize();
-        m_ResourceManager = resourceManager;
+        m_ResultUIView.Initialize();
+    }
+
+    public void Retry()
+    {
+        m_ResultUIView.PlayRetryAnimation();
+        InitializeView();
     }
 
     public void UpdateView(float ratio)
