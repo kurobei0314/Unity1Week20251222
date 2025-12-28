@@ -15,8 +15,33 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 763391e80f8aa449b8ba925c7cf6b9b8
   m_SerializeEntries:
+  - m_GUID: 4d0f92163c687442bacf52ded0a65d40
+    m_Address: UnderChargeSE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54001528b9a3443cb8762c8ff6f895eb
+    m_Address: OverChargeSE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c1f4a755d7ae48d6ba53ddf3f85a460
+    m_Address: BGM
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 948a471add6ad4c7983764e74fcc5ca3
+    m_Address: JustSE
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a2ab56839e1c9504ea9d141e95d0b16b
     m_Address: Hit
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7596dd0f751743a0b5429538f710243
+    m_Address: ClickSE
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
